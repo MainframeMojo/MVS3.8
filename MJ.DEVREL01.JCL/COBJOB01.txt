@@ -4,7 +4,7 @@
 //         NOTIFY=&SYSUID                                                       
 //*                                                                             
 //STEP01   EXEC PGM=COBOL01                                                     
-//STEPLIB  DD   DSN=HERC03.TEST.LOADLIB,DISP=SHR                                
+//STEPLIB  DD   DSN=MJ.DEVREL01.LOADLIB,DISP=SHR                                
 //SYSPRINT DD   SYSOUT=*                                                        
 //SYSOUT   DD   SYSOUT=*                                                        
 //SYSIN    DD   DUMMY                                                           
