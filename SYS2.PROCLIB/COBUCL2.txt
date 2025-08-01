@@ -1,0 +1,27 @@
+//*****************************************************
+//* JOB COBUCL2 - BATCH COBOL COMPILE JOB for MVS 3.8
+//* LIBRARY - COPY TO SYS2.PROCLIB
+//* USE A JCL JOB TO CALL THIS JOB TO BUILD YOUR PROJECT
+//* AUTHOR: MAINFRAME MOJO
+//*****************************************************            
+//COBUCL2 PROC SOUT='*'                                                 00000101
+//COB  EXEC  PGM=IKFCBL00,                                              00000200
+//           PARM='LIB,LOAD,SUPMAP,SIZE=2048K,BUF=1024K'                00000304
+//SYSPRINT  DD SYSOUT=&SOUT                                             00000400
+//SYSUT1 DD UNIT=SYSDA,SPACE=(460,(700,100))                            00000500
+//SYSUT2 DD UNIT=SYSDA,SPACE=(460,(700,100))                            00000600
+//SYSUT3 DD UNIT=SYSDA,SPACE=(460,(700,100))                            00000700
+//SYSUT4 DD UNIT=SYSDA,SPACE=(460,(700,100))                            00000800
+//SYSLIN DD DSNAME=&LOADSET,DISP=(MOD,PASS),UNIT=SYSDA,                 00000900
+//             SPACE=(80,(500,100))                                     00001000
+//SYSPUNCH DD SYSOUT=&SOUT                                              00001102
+//SYSLIB  DD DSNAME=&LIB,DISP=(NEW,PASS),UNIT=SYSDA,                    00001203
+//             SPACE=(1024,(50,20,1))                                   00001303
+//LKED EXEC PGM=IEWL,PARM='LIST,XREF,LET',COND=(5,LT,COB)               00001400
+//SYSLIN  DD DSNAME=&LOADSET,DISP=(OLD,DELETE)                          00001500
+//  DD  DDNAME=SYSIN                                                    00001600
+//SYSLMOD DD DSNAME=&GODATA(RUN),DISP=(NEW,PASS),UNIT=SYSDA,            00001700
+//             SPACE=(1024,(50,20,1))                                   00001800
+//SYSLIB DD   DSNAME=SYS1.COBLIB,DISP=SHR                               00001900
+//SYSUT1 DD UNIT=(SYSDA,SEP=(SYSLIN,SYSLMOD)),SPACE=(1024,(50,20))      00002000
+//SYSPRINT DD SYSOUT=&SOUT                                              00002100
