@@ -1,0 +1,11 @@
+//COBJOB01 JOB (JOB),'COBOL PROGRAM',                                           
+//         CLASS=A,MSGCLASS=X,                                                  
+//         MSGLEVEL=(1,1),                                                      
+//         NOTIFY=&SYSUID                                                       
+//*                                                                             
+//STEP01   EXEC PGM=COBOL01                                                     
+//STEPLIB  DD   DSN=HERC03.TEST.LOADLIB,DISP=SHR                                
+//SYSPRINT DD   SYSOUT=*                                                        
+//SYSOUT   DD   SYSOUT=*                                                        
+//SYSIN    DD   DUMMY                                                           
+//*                                                                             
