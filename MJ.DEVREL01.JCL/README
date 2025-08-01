@@ -1,0 +1,4 @@
+MJ.DEVREL01.JCL
+
+Contains the JCL JOBS that execute the compiled versions of the Batch COBOL Programs from MJ.DEVREL01.BCOB.
+All Programs are execute from the specified LOADLIB. 
