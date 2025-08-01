@@ -11,9 +11,9 @@ A personal collection of JCL jobs, COBOL programs, and a custom COBOL compiler s
 ## Getting Started
 
 To run these jobs and programs, you'll need:
-- A working MVS 3.8 system or emulator (e.g., Hercules)
-- TSO access or an equivalent batch environment
-- Familiarity with submitting jobs via SDSF or JES2 queue
+- A working MVS 3.8 system with HERCULES TK5 emulator
+- TSO access or an equivalent batch environment - Simply use the HERC01 ADMIN on the MVS 3.8 System
+- Familiarity with submitting jobs via JES2 queue
 
 ## Usage
 
