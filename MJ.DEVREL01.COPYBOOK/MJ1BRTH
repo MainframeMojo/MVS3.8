@@ -1,0 +1,14 @@
+           01 WS-DATES.                                                        
+              02 WS-CURR-DT.                                                   
+                 03  WS-CURR-DT-YR     PIC 9(4).                               
+                 03  FILLER            PIC X.                                  
+                 03  WS-CURR-DT-MM     PIC 9(2).                               
+                 03  FILLER            PIC X.                                  
+                 03  WS-CURR-DT-DD     PIC 9(2).                               
+                                                                               
+              02 WS-BRTH-DT.                                                   
+                 03  WS-BRTH-DT-YR     PIC 9(4).                               
+                 03  FILLER            PIC X.                                  
+                 03  WS-BRTH-DT-MM     PIC 9(2).                               
+                 03  FILLER            PIC X.                                  
+                 03  WS-BRTH-DT-DD     PIC 9(2).                               
