@@ -1,0 +1,34 @@
+//MJSORTM  JOB  (TSO),                                                   
+//             'SORTMERG',                                               
+//             CLASS=A,                                                  
+//             MSGCLASS=X,                                               
+//             COND=(0,NE),                                              
+//             MSGLEVEL=(1,1)                                            
+//*********************************************************************  
+//*                                                                      
+//* NAME: HERC03.TEST.CNTL(SORT)                                         
+//*                                                                      
+//* DESC: SORTING AND MERGE TWO FILES TOGETHER                           
+//*                                                                      
+//*********************************************************************  
+//*                                                                      
+//STEP01  EXEC PGM=IDCAMS                                                
+//SYSPRINT DD  SYSOUT=*                                                  
+//SYSIN    DD  *                                                         
+ DELETE HERC03.OUTPUT.TEST02                                             
+ SET LASTCC=0                                                            
+ SET MAXCC=0                                                             
+ /*                                                                      
+//STEP02  EXEC PGM=SORT                                                  
+//SYSOUT   DD  SYSOUT=*                                                  
+//SORTLIB  DD  DSNAME=SYS1.SORTLIB,DISP=SHR                              
+//SORTIN   DD  DSN=HERC03.INPUT.TEST01,DISP=SHR                          
+//         DD  DSN=HERC03.INPUT.TEST02,DISP=SHR                          
+//SORTOUT  DD  DSN=HERC03.OUTPUT.TEST02,                                 
+//             DISP=(NEW,CATLG,DELETE),                                  
+//             SPACE=(TRK,(1,1),RLSE),                                   
+//             UNIT=3390,VOL=SER=TSO002,                                 
+//             DCB=(LRECL=80,RECFM=FB,BLKSIZE=23440)                     
+//SYSIN    DD  *                                                         
+  SORT FIELDS=(1,15,ZD,A)                                                
+/*                                                                       
