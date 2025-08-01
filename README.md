@@ -11,10 +11,12 @@ A personal collection of JCL jobs, COBOL programs, and a custom COBOL compiler s
 ## Getting Started
 
 To run these jobs and programs, you'll need:
-- A working MVS 3.8 system with HERCULES TK5 emulator
+- A working MVS 3.8 system with HERCULES TK5 emulator:
+  - DOWNLOAD MVS TK5 FROM https://www.prince-webdesign.nl/index.php/software/mvs-3-8j-turnkey-5
+  - INSTALL X3270   
 - TSO access or an equivalent batch environment - Simply use the HERC01 ADMIN on the MVS 3.8 System
 - Familiarity with submitting jobs via JES2 queue
-- Familiarity with allocating and managing datasets on a mainframe environment. 
+- Familiarity with allocating and managing datasets on a mainframe environment.
 
 ## Set up your Projects in MVS 3.8 to develop Cobol Programs
 Allocate your datasets libraries as I have set mine you can use HERC01.TEST.CNTL as a template from mvs 3.8
