@@ -1,0 +1,40 @@
+      **************************************************************  
+      *                                                               
+      *  PROGRAM ID COBOL01                                           
+      *  DATE CREATED:  2024-10-30                                    
+      *                                                               
+      *                                                               
+      *  CHANGE LOG                                                   
+      *  USER ID     DATE     CHANGE DESCRIPTION                      
+      * ---------   ------    -------------------------------------   
+      *  HERC03     241120     DISPLAY HELLO WORLD                    
+      **************************************************************  
+       IDENTIFICATION DIVISION.                                       
+       PROGRAM-ID.  'COBOL01'.                                        
+                                                                      
+       ENVIRONMENT DIVISION.                                          
+       CONFIGURATION SECTION.                                         
+       SOURCE-COMPUTER.  IBM-360.                                     
+       OBJECT-COMPUTER.  IBM-360.                                     
+       SPECIAL-NAMES.                                                 
+           CONSOLE IS CNSL.                                           
+                                                                      
+       DATA DIVISION.                                                 
+       WORKING-STORAGE SECTION.                                       
+                                                                      
+           01 WS-VALUES.                                              
+              02 MSG01       PIC X(20) VALUE 'DISPLAY STARTS'.        
+                                                                      
+              02 WS-DISP.                                             
+                   05 WS-NAME     PIC X(30).                          
+                                                                      
+              02 MSG02       PIC X(20) VALUE 'DISPLAY ENDS'.          
+                                                                      
+       PROCEDURE DIVISION.                                            
+                                                                      
+           MOVE 'HELLO WORLD' TO WS-NAME.                             
+           DISPLAY WS-VALUES.                                         
+                                                                      
+           STOP RUN.                                                  
+                                                                      
+                                                                      
