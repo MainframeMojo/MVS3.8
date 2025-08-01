@@ -1,0 +1,13 @@
+SYS2.PROCLIB
+
+COBUCL2 is the member I created that cleans up the existing COBOL COMPILER. 
+
+How to use it:
+
+SIMPLY create a new member in the SYS2.PROCLIB as COBUCL2 
+COPY and PASTE the records into the member and save it
+
+In MJ.DEVREL01.BCOB(@COMPILE) 
+  Use this job to input your BCOB member, COPYBOOK and Specify your LOAD Library and it will call COBUCL2 and build your LOAD.
+
+Note: in MVS 3.8 USERS HERC01, HERC02, HERC03 all have HERC01.TEST.LOADLIB. 
