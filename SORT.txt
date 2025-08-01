@@ -1,0 +1,31 @@
+//MJSORT  JOB  (TSO),'SORT',CLASS=A,MSGCLASS=X                           
+//*            'SORT',                                                   
+//*            CLASS=A,                                                  
+//*            MSGCLASS=X,                                               
+//*            COND=(0,NE),                                              
+//*            MSGLEVEL=(1,1)                                            
+//*********************************************************************  
+//*                                                                      
+//* NAME: HERC03.TEST.CNTL(SORT)                                         
+//*                                                                      
+//* DESC: CREATE A FILE                                                  
+//*                                                                      
+//*********************************************************************  
+//*                                                                      
+//STEP01  EXEC PGM=IDCAMS                                                
+//SYSPRINT DD  SYSOUT=*                                                  
+//SYSIN    DD  *                                                         
+ DELETE HERC03.OUTPUT.TEST01                                             
+ /*                                                                      
+//STEP02  EXEC PGM=SORT                                                  
+//SYSOUT   DD  SYSOUT=*                                                  
+//SORTLIB  DD  DSNAME=SYS1.SORTLIB,DISP=SHR                              
+//SORTIN   DD  DSN=HERC03.INPUT.TEST02,DISP=SHR                          
+//SORTOUT  DD  DSN=HERC03.OUTPUT.TEST01,                                 
+//             DISP=(NEW,CATLG,DELETE),                                  
+//             UNIT=TSO,                                                 
+//             SPACE=(TRK,(1)),                                          
+//             DCB=(LRECL=80,RECFM=FB,BLKSIZE=23440)                     
+//SYSIN    DD  *                                                         
+  SORT FIELDS=(1,15,CH,A)                                                
+/*                                                                       

@@ -1,0 +1,26 @@
+//ALLOPS    JOB ,'MVS TOOLBOX',CLASS=A,MSGCLASS=H                     
+//*                                                                   
+//* ******************************************************************
+//*  ALLOCATE PS SEQUENTIAL FILE                                      
+//*                                                                   
+//*  THINGS TO ADAPT TO YOUR NEEDS:                                   
+//*    DSN=     THE NAME OF YOUR DATA SET                             
+//*    SPACE=   CYLINDERS OR TRACKS YOU WANT TO ALLOCATE              
+//*             X = PRIMARY QUANTITY (HOW MANY TO ALLOCATE)           
+//*             Y = SECONDARY QUANTITY (HOW MANY IF MORE SPACE NEEDED)
+//*    VOL=SER= THE DASD WHERE THE DATA WILL BE ALLOCATED             
+//*    LRECL=   RECORD LENGTH                                         
+//*    BLKSIZE= BLOCK SIZE                                            
+//* ******************************************************************
+//*                                                                   
+//ALLOCATE EXEC PGM=IEFBR14                                           
+//SYSPRINT   DD SYSOUT=*                                              
+//SYSOUT     DD SYSOUT=*                                              
+//SYSDUMP    DD SYSOUT=*                                              
+//DD1        DD DSN=MJ.INPUT.DATASET,                                 
+//           DISP=(NEW,CATLG,DELETE),                                 
+//           SPACE=(TRK,(1,1),RLSE),                                  
+//           UNIT=SYSDA,                                              
+//           VOL=SER=TSO003,                                          
+//           DCB=(DSORG=PS,RECFM=FB,LRECL=20,BLKSIZE=200)             
+//                                                                    
