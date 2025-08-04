@@ -12,6 +12,7 @@ A personal collection of JCL jobs, COBOL programs, and a custom COBOL compiler s
 
 To run these jobs and programs, you'll need:
 - A working MVS 3.8 system with HERCULES TK5 emulator:
+  - Check out our Youtube Tutorial on how to Install the Hercules Emulator https://youtu.be/Q2lICoXmY2E
   - DOWNLOAD MVS TK5 FROM https://www.prince-webdesign.nl/index.php/software/mvs-3-8j-turnkey-5
   - INSTALL X3270   
 - TSO access or an equivalent batch environment - Simply use the HERC01 ADMIN on the MVS 3.8 System
