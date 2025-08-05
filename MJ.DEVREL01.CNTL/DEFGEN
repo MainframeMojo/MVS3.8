@@ -1,0 +1,17 @@
+//*******************************************************
+//* JOB DEFGEN - Creates the generations dataset (+1)
+//* VOL=SER=TSO001 must be the same as the BASE. 
+//* 
+//* This job creates and adds a generational dataset
+//* Must be run after DEFGDG 
+//*
+//*******************************************************
+//DEFGEN  JOB 'MF MOJO',CLASS=A,MSGLEVEL=(1,1),MSGCLASS=A         
+//*                                                               
+//STEP2  EXEC PGM=IEFBR14                                         
+//GDGDD1 DD   DSNAME=MFMOJO.ACH.TRANS(+1),DISP=(NEW,CATLG,DELETE),
+//            SPACE=(TRK,(10,5)),                                 
+//            UNIT=3390,VOL=SER=TSO001                            
+//SYSPRINT  DD SYSOUT=A                                           
+//SYSIN  DD   *                                                   
+/*                                                                
