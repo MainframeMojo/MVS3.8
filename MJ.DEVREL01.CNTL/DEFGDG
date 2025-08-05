@@ -1,0 +1,31 @@
+//*******************************************************
+//* JOB DEFGDG -  DEFINES A GDG BASE FILE
+//* TAKEN FROM JAY MOSELEY WEBISTE
+//* RULES : GDG BASE MUST HAVE A MODEL IN THE SAME
+//*         VOL=SER. 
+//* MVS 3.8 ALWAYS CREATED THE MODEL IN TSO001
+//*
+//* TO CREATE A GDG RUN THIS JOB FIRST AND UPDATE YOUR
+//* DATASET NAME. ADJUST YOUR LIMIT TO HOW MANY GENERATIONS
+//* YOU WANT
+//*******************************************************
+//DEFGDG  JOB 'MF MOJO',CLASS=A,MSGLEVEL=(1,1),MSGCLASS=A               
+//IDCAMS  EXEC PGM=IDCAMS,REGION=4049K                                  
+//MODEL   DD   DSN=MFMOJO.ACH.TRANS,DISP=(NEW,KEEP),                    
+//             UNIT=3390,VOL=SER=TSO001,SPACE=(TRK,0),                  
+//             DCB=(RECFM=FB,LRECL=80,BLKSIZE=3120)                     
+//SYSPRINT DD  SYSOUT=A                                                 
+//SYSIN   DD   *                                                        
+                                                                        
+  DELETE MFMOJO.ACH.TRANS GENERATIONDATAGROUP                           
+                                                                        
+  DEFINE GENERATIONDATAGROUP (               -                          
+               NAME(MFMOJO.ACH.TRANS)        -                          
+               LIMIT(5)                      -                          
+               SCRATCH )                                                
+                                                                        
+  IF LASTCC = 0 THEN                         -                          
+        LISTCAT ALL ENTRIES(MFMOJO.ACH.TRANS)                           
+                                                                        
+/*                                                                      
+//                                                                      
