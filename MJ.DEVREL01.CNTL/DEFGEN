@@ -5,6 +5,9 @@
 //* This job creates and adds a generational dataset
 //* Must be run after DEFGDG 
 //*
+//* Note there is a bug found I cannot access the 
+//*      SEQ Data set after generation. 
+//*  Work in Progress
 //*******************************************************
 //DEFGEN  JOB 'MF MOJO',CLASS=A,MSGLEVEL=(1,1),MSGCLASS=A         
 //*                                                               
