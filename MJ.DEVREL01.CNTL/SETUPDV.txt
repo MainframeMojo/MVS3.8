@@ -1,0 +1,58 @@
+//SETUPDV JOB  (SETUP),                                               
+//             'SETUP DEV PROJ',                                      
+//             CLASS=A,                                               
+//             MSGCLASS=X,                                            
+//             MSGLEVEL=(0,0),                                        
+//             NOTIFY=&SYSUID                                         
+//********************************************************************
+//*                                                                   
+//* JOBNAME SETUPDV                                                   
+//*                                                                   
+//* DESC: SEVERAL STEPS TO ALLOCATE PARTITION DATA SETS               
+//*       TO SET UP YOUR WORK ENVIRONMENT:                            
+//*       BCOB - BATCH COBOL ELEMENTS                                 
+//*       JCL  - JCL JOBS TO RUN YOUR COBOL PROGRAMS                  
+//*       COPYBOOK - COPYBOOK ELEMENTS                                
+//*       LOADLIB - TO STORE YOUR COMPILES RECFM=U                    
+//*                                                                   
+//********************************************************************
+//*                                                                   
+//STEP01  EXEC PGM=IEFBR14                                            
+//ALLOC1   DD  DSN=MJ.PRDREL01.BCOB,                                  
+//             DISP=(NEW,CATLG,DELETE),                               
+//             UNIT=TSO,                                              
+//             SPACE=(CYL,(1,1,15),RLSE),                             
+//             DCB=(LRECL=80,RECFM=FB,BLKSIZE=27920,DSORG=PO)         
+//SYSPRINT DD  SYSOUT=*                                               
+//SYSOUT   DD  SYSOUT=*                                               
+//*          
+//STEP02  EXEC PGM=IEFBR14                                            
+//ALLOC2   DD  DSN=MJ.PRDREL01.COPYBOOK,                              
+//             DISP=(NEW,CATLG,DELETE),                               
+//             UNIT=TSO,                                              
+//             SPACE=(CYL,(1,1,15),RLSE),                             
+//             DCB=(LRECL=80,RECFM=FB,BLKSIZE=27920,DSORG=PO)         
+//SYSPRINT DD  SYSOUT=*                                               
+//SYSOUT   DD  SYSOUT=*                                               
+//*                                                                   
+//STEP03  EXEC PGM=IEFBR14                                            
+//ALLOC3   DD  DSN=MJ.PRDREL01.JCL,                                   
+//             DISP=(NEW,CATLG,DELETE),                               
+//             UNIT=TSO,                                              
+//             SPACE=(CYL,(1,1,15),RLSE),                             
+//             DCB=(LRECL=80,RECFM=FB,BLKSIZE=27920,DSORG=PO)         
+//SYSPRINT DD  SYSOUT=*                                               
+//SYSOUT   DD  SYSOUT=*                                               
+//*                                                                   
+//********************************************************************
+//* SETUP YOUR LOADLIB NOTE RECFM=U                                   
+//********************************************************************
+//STEP04  EXEC PGM=IEFBR14                                            
+//ALLOC4   DD  DSN=MJ.PRDREL01.LOADLIB,                               
+//             DISP=(NEW,CATLG,DELETE),                               
+//             UNIT=TSO,                                              
+//             SPACE=(CYL,(5,5,15),RLSE),                             
+//             DCB=(LRECL=0,RECFM=U,BLKSIZE=6144,DSORG=PO)            
+//SYSPRINT DD  SYSOUT=*                                               
+//SYSOUT   DD  SYSOUT=*                                               
+//*                                                                   
