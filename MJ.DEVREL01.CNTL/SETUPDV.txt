@@ -18,7 +18,7 @@
 //********************************************************************
 //*                                                                   
 //STEP01  EXEC PGM=IEFBR14                                            
-//ALLOC1   DD  DSN=MJ.PRDREL01.BCOB,                                  
+//ALLOC1   DD  DSN=MJ.DEVREL01.BCOB,                                  
 //             DISP=(NEW,CATLG,DELETE),                               
 //             UNIT=TSO,                                              
 //             SPACE=(CYL,(1,1,15),RLSE),                             
@@ -27,7 +27,7 @@
 //SYSOUT   DD  SYSOUT=*                                               
 //*          
 //STEP02  EXEC PGM=IEFBR14                                            
-//ALLOC2   DD  DSN=MJ.PRDREL01.COPYBOOK,                              
+//ALLOC2   DD  DSN=MJ.DEVREL01.COPYBOOK,                              
 //             DISP=(NEW,CATLG,DELETE),                               
 //             UNIT=TSO,                                              
 //             SPACE=(CYL,(1,1,15),RLSE),                             
@@ -36,7 +36,7 @@
 //SYSOUT   DD  SYSOUT=*                                               
 //*                                                                   
 //STEP03  EXEC PGM=IEFBR14                                            
-//ALLOC3   DD  DSN=MJ.PRDREL01.JCL,                                   
+//ALLOC3   DD  DSN=MJ.DEVREL01.JCL,                                   
 //             DISP=(NEW,CATLG,DELETE),                               
 //             UNIT=TSO,                                              
 //             SPACE=(CYL,(1,1,15),RLSE),                             
@@ -48,7 +48,7 @@
 //* SETUP YOUR LOADLIB NOTE RECFM=U                                   
 //********************************************************************
 //STEP04  EXEC PGM=IEFBR14                                            
-//ALLOC4   DD  DSN=MJ.PRDREL01.LOADLIB,                               
+//ALLOC4   DD  DSN=MJ.DEVREL01.LOADLIB,                               
 //             DISP=(NEW,CATLG,DELETE),                               
 //             UNIT=TSO,                                              
 //             SPACE=(CYL,(5,5,15),RLSE),                             
