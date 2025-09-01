@@ -2,8 +2,9 @@ MJ.DEVREL01.CNTL
 
 This folder represents the partition dataset where I keep my JCL Utility Jobs such as
 
-Allocating Partition Datasets
+Allocating a single Partition Datasets
 Allocation Sequential Files
+Allocation of Partition datasets for all Cobol related libraries. Helps with Development.
 SORT
 SORT / Merge
 
