@@ -7,7 +7,7 @@
       *  CHANGE LOG                                                   
       *  USER ID     DATE     CHANGE DESCRIPTION                      
       * ---------   ------    -------------------------------------   
-      *  HERC03     241120     DISPLAY HELLO WORLD                    
+      *  MFMOJO     241120     DISPLAY HELLO WORLD                    
       **************************************************************  
        IDENTIFICATION DIVISION.                                       
        PROGRAM-ID.  'COBOL01'.                                        
