@@ -4,6 +4,11 @@ COBUCL2 is the member I created that cleans up the existing COBOL COMPILER.
 
 How to use it:
 
+Youtube episode where I show you how to use the File Transfer to upload this member into MVS 3.8
+{Link Here}
+
+Or
+
 SIMPLY create a new member in the SYS2.PROCLIB as COBUCL2 
 COPY and PASTE the records into the member and save it
 
