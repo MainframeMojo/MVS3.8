@@ -1,3 +1,21 @@
+*********************************************************************
+* Listing of unique BCOB Member Names and Jobnames to go with it.
+*
+* Naming Convention is important to maintain applications with 
+* releases and proper versioning
+*
+*  BCOB Naming
+*  MJ - Identifies the Application prefix
+*  1  - Release Number 
+*  A  - Identifies as the first application in a process
+*  XXX - Last 3 digits are unique to the BCOB Name
+*
+*  JCL JOB Naming (JCL runs in different environments(ENV) )
+*  D - ENV Prefix for Dev, T-  ENV Prefix for Test, P ENV for Prod
+*  MJ - Application owner of the JOB
+*  1  - Release Number
+*  xxx - Last 3 Digits matches to the BCOB
+*********************************************************************
 BCOB NAMES        JOB NAMES          PROGRAM DESCRIPTION            
 ----------       -----------       ---------------------------------
                                                                     
