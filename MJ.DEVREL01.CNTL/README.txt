@@ -11,7 +11,7 @@ SORT / Merge
 For GDG Generation:
   1) DEFGDG - The Generational Dataset Base Definition. Only works with VOL=SER=TSO001 as the user catalog seems to go there.
   2) DEFGEN - The Generational Dataset Generation Definition. This is how to allocate Generation Data set based off of your GDGBase.
-                - Bug found having issues with Sequential Datasets a work in progress
+                - Bug found having issue with generating the first gdg, but if you re-run and create the next one it works!
 
 To use this in MVS 3.8 simply allocated yourself a Partition Dataset and copy and paste the files into the members. 
 
