@@ -1,0 +1,16 @@
+# MJ.DEVREL01.INPUTFILES
+
+## Overview
+This dataset contains all the input files used throughout my tutorials. Each file serves as a foundational resource for demonstrating key concepts, workflows, and techniques covered in the lessons.
+
+## Contents
+- PGMNAME - Contains a listing of BCOB and JOBNAMES that are unique
+
+## Usage
+Feel free to explore and use these files as you progress through the tutorials. Each file is referenced at the appropriate step in the tutorial to ensure smooth learning and reproducibility.
+
+## Notes
+- All files are organized by tutorial topic or module.
+- Updates or additions to the dataset will be reflected in future versions of this README.
+
+Happy learning!
