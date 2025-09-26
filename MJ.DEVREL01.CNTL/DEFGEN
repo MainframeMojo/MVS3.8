@@ -5,9 +5,11 @@
 //* This job creates and adds a generational dataset
 //* Must be run after DEFGDG 
 //*
-//* Note there is a bug found I cannot access the 
-//*      SEQ Data set after generation. 
-//*  Work in Progress
+//* Note there is a bug found I get an error invalid
+//* record only on the first generation. 
+//* Work around is re-run this job to create the 2nd
+//* generation and start from there seems to work fine.
+//*      
 //*******************************************************
 //DEFGEN  JOB 'MF MOJO',CLASS=A,MSGLEVEL=(1,1),MSGCLASS=A         
 //*                                                               
