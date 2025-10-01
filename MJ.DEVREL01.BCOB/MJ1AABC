@@ -1,0 +1,73 @@
+      **************************************************************
+      *                                                             
+      *  PROGRAM ID MJ1AABC                                         
+      *  DATE CREATED:  2025-09-28                                  
+      *  JOB in MJ.DEVREL01.JCL(DMJ1AABC)                                                           
+      *                                                             
+      *  CHANGE LOG                                                 
+      *  USER ID     DATE     CHANGE DESCRIPTION                    
+      * ---------   ------    ------------------------------------- 
+      *  MFMOJO     250928     COMPUTE PROGRAM                      
+      **************************************************************
+       IDENTIFICATION DIVISION.                                     
+       PROGRAM-ID.  'MJ1AABC'.                                      
+                                                                    
+       ENVIRONMENT DIVISION.                                        
+       CONFIGURATION SECTION.                                       
+       SOURCE-COMPUTER.  IBM-360.                                   
+       OBJECT-COMPUTER.  IBM-360.                                   
+       SPECIAL-NAMES.                                               
+           CONSOLE IS CNSL.                                         
+                                                                    
+       DATA DIVISION.                                               
+       WORKING-STORAGE SECTION.                                     
+                                                                    
+           01 WS-NBR1        PIC 9(03)V99.                          
+           01 WS-NBR2        PIC 9(03)V99.                          
+           01 WS-TOTL        PIC 9(05)V99.                          
+                                                                    
+       PROCEDURE DIVISION.                                          
+                                                                    
+           MOVE 3   TO  WS-NBR1.                                    
+           MOVE 5   TO  WS-NBR2.                                    
+           MOVE 0   TO  WS-TOTL.                                    
+                                                                    
+           COMPUTE WS-TOTL = WS-NBR1 +                              
+                             WS-NBR2                                
+           .      
+           DISPLAY WS-NBR1 ' + '                                       
+                   WS-NBR2 ' = '                                       
+                   WS-TOTL                                             
+           .                                                           
+                                                                       
+                                                                       
+           MOVE 43333 TO  WS-NBR1.                                     
+           MOVE 53333 TO  WS-NBR2.                                     
+           MOVE 0     TO  WS-TOTL.                                     
+                                                                       
+           COMPUTE WS-TOTL = WS-NBR1 +                                 
+                             WS-NBR2                                   
+           .                                                           
+                                                                       
+           DISPLAY WS-NBR1 ' + '                                       
+                   WS-NBR2 ' = '                                       
+                   WS-TOTL                                             
+           .                                                           
+                                                                       
+           MOVE 3.33  TO  WS-NBR1.                                     
+           MOVE 5.33  TO  WS-NBR2.                                     
+           MOVE 0     TO  WS-TOTL.                                     
+                                                                       
+           COMPUTE WS-TOTL = WS-NBR1 +                                 
+                             WS-NBR2                                   
+           .                                                           
+                                                                       
+           DISPLAY WS-NBR1 ' + '                                       
+                   WS-NBR2 ' = '                                       
+                   WS-TOTL                                             
+           .                                                           
+                                                                       
+           STOP RUN.                                                   
+                                                                       
+                                                                       
+                                                                       
