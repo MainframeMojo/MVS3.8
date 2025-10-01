@@ -6,7 +6,7 @@ Contains the Batch Cobol Programs created in MVS 3.8
 @COMPILE - Is the job you can use to compile. Make sure you have the COBUCL2 created and save in SYS2.PROCLIB
 
 COBOL01 - Hello World Program - JCL JOB COBJOB01
-
+MJ1AABC - Compute Program for Youtube Tutorial Posted October 3rd 2025.
 
 
 
