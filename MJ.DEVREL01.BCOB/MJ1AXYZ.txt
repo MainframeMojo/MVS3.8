@@ -1,0 +1,57 @@
+      **************************************************************
+      *                                                             
+      *  PROGRAM ID MJ1A1K9                                         
+      *  DATE CREATED:  2025-10-09                                  
+      *                                                             
+      *                                                             
+      *  CHANGE LOG                                                 
+      *  USER ID     DATE     CHANGE DESCRIPTION                    
+      * ---------   ------    ------------------------------------- 
+      *  MFMOJO     251009     IF STATEMENT FOR GRADES              
+      **************************************************************
+       IDENTIFICATION DIVISION.                                     
+       PROGRAM-ID.  'MJ1A1K9'.                                      
+                                                                    
+       ENVIRONMENT DIVISION.                                        
+       CONFIGURATION SECTION.                                       
+       SOURCE-COMPUTER.  IBM-360.                                   
+       OBJECT-COMPUTER.  IBM-360.                                   
+       SPECIAL-NAMES.                                               
+           CONSOLE IS CNSL.                                         
+                                                                    
+       DATA DIVISION.                                               
+       WORKING-STORAGE SECTION.                                     
+                                                                    
+           01 WS-GRADE            PIC 9(02).                        
+                                                                    
+           01 WS-GRADE-MSG.                                         
+              05 WS-GRADE-MSG-90  PIC X(20) VALUE 'EXCELLENT'.      
+              05 WS-GRADE-MSG-75  PIC X(20) VALUE 'GOOD'.           
+              05 WS-GRADE-MSG-50  PIC X(20) VALUE 'PASS'.           
+              05 WS-GRADE-MSG-00  PIC X(20) VALUE 'FAIL'.           
+                                                                    
+       PROCEDURE DIVISION.                                          
+                                                                       
+           MOVE 95 TO WS-GRADE.                                        
+           DISPLAY WS-GRADE.                                           
+                                                                       
+           IF (WS-GRADE > 89 AND WS-GRADE  < 101)                      
+              DISPLAY WS-GRADE-MSG-90                                  
+                                                                       
+           ELSE                                                        
+              IF (WS-GRADE > 74 AND WS-GRADE  < 90)                    
+                  DISPLAY WS-GRADE-MSG-75                              
+              ELSE                                                     
+                 IF (WS-GRADE > 49 AND WS-GRADE  < 75)                 
+                     DISPLAY WS-GRADE-MSG-50                           
+                 ELSE                                                  
+                    IF (WS-GRADE > 0  AND WS-GRADE  < 50)              
+                       DISPLAY WS-GRADE-MSG-00                         
+                    ELSE                                               
+                       DISPLAY 'INVALID ENTRY'                         
+                    .                                                  
+                 .                                                     
+              .                                                        
+           .                                                           
+                                                                       
+           STOP RUN.      
