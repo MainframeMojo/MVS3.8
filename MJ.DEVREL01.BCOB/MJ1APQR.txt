@@ -1,0 +1,46 @@
+      **************************************************************    
+      *                                                                 
+      *  PROGRAM ID MJ1APQR                                             
+      *  DATE CREATED:  2025-10-21                                      
+      *                                                                 
+      *                                                                 
+      *  CHANGE LOG                                                     
+      *  USER ID     DATE     CHANGE DESCRIPTION                        
+      * ---------   ------    -------------------------------------     
+      *  MFMOJO     251021     PERFORM STATEMENT TO EXECUTE A           
+      *                        PARAGRAPH                                
+      **************************************************************    
+       IDENTIFICATION DIVISION.                                         
+       PROGRAM-ID.  'MJ1APQR'.                                          
+                                                                        
+       ENVIRONMENT DIVISION.                                            
+       CONFIGURATION SECTION.                                           
+       SOURCE-COMPUTER.  IBM-360.                                       
+       OBJECT-COMPUTER.  IBM-360.                                       
+       SPECIAL-NAMES.                                                   
+           CONSOLE IS CNSL.                                             
+                                                                        
+       DATA DIVISION.                                                   
+       WORKING-STORAGE SECTION.                                         
+                                                                        
+                                                                        
+       PROCEDURE DIVISION.                                              
+                                                                        
+           PERFORM PARAGRAPH-1.                                         
+           PERFORM PARAGRAPH-2.                                         
+                                                                        
+           STOP RUN.                                                    
+                                                                        
+                                                                        
+       PARAGRAPH-1.                                                     
+           DISPLAY 'PARAGRAPH 1 EXECUTED'.                              
+                                                                        
+       PARAGRAPH-2.   
+           DISPLAY 'PARAGRAPH 2 EXECUTED'.                              
+           PERFORM PARAGRAPH-1.                                         
+           PERFORM PARAGRAPH-3.                                         
+                                                                        
+       PARAGRAPH-3.                                                     
+           DISPLAY 'PARAGRAPH 3 EXECUTED'.                              
+                                                                        
+                                                                        
