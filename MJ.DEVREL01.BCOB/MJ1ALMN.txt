@@ -1,0 +1,43 @@
+      **************************************************************    
+      *                                                                 
+      *  PROGRAM ID MJ1ALMN                                             
+      *  DATE CREATED:  2025-11-02                                      
+      *                                                                 
+      *                                                                 
+      *  CHANGE LOG                                                     
+      *  USER ID     DATE     CHANGE DESCRIPTION                        
+      * ---------   ------    -------------------------------------     
+      *  MFMOJO     251102     PERFORM STATEMENT TO EXECUTE LOOPS       
+      *                        EXAMPLES.                                
+      **************************************************************    
+       IDENTIFICATION DIVISION.                                         
+       PROGRAM-ID.  'MJ1ALMN'.                                          
+                                                                        
+       ENVIRONMENT DIVISION.                                            
+       CONFIGURATION SECTION.                                           
+       SOURCE-COMPUTER.  IBM-360.                                       
+       OBJECT-COMPUTER.  IBM-360.                                       
+       SPECIAL-NAMES.                                                   
+           CONSOLE IS CNSL.                                             
+                                                                        
+       DATA DIVISION.                                                   
+       WORKING-STORAGE SECTION.                                         
+                                                                        
+           01 WS-CNT       PIC 9.                                       
+                                                                        
+       PROCEDURE DIVISION.                                              
+                                                                        
+           PERFORM PARAGRAPH-1 5 TIMES.                                 
+                                                                        
+           MOVE 1 TO WS-CNT.                                            
+           PERFORM PARAGRAPH-2 UNTIL WS-CNT > 5.                        
+                                                                        
+           STOP RUN.                                                    
+                                                                        
+       PARAGRAPH-1.                                                     
+           DISPLAY 'HELLO WORLD'.
+
+       PARAGRAPH-2.                                                     
+           DISPLAY 'WAZZ UP'.                                           
+           ADD 1 TO WS-CNT.                                             
+                                                                                   
