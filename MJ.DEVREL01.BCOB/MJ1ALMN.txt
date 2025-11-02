@@ -8,7 +8,10 @@
       *  USER ID     DATE     CHANGE DESCRIPTION                        
       * ---------   ------    -------------------------------------     
       *  MFMOJO     251102     PERFORM STATEMENT TO EXECUTE LOOPS       
-      *                        EXAMPLES.                                
+      *                        EXAMPLES.    
+      *  NOTES FOR LOOPS THERE ARE NO END-PERFORMS MUST END WITH .
+      *        LOOPS MUST BE CALLED IN A PARAGRAPH
+      *
       **************************************************************    
        IDENTIFICATION DIVISION.                                         
        PROGRAM-ID.  'MJ1ALMN'.                                          
