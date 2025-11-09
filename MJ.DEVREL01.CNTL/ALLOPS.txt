@@ -13,14 +13,19 @@
 //*    BLKSIZE= BLOCK SIZE                                            
 //* ******************************************************************
 //*                                                                   
-//ALLOCATE EXEC PGM=IEFBR14                                           
+//STEP01  EXEC PGM=IDCAMS                                             
+//SYSPRINT DD  SYSOUT=*                                               
+//SYSIN    DD  *                                                      
+ DELETE MJ.INPUT.FILE                                                 
+//*                                                                   
+//STEP02   EXEC PGM=IEFBR14                                           
+//OUTPTF   DD  DSN=MJ.INPUT.FILE,                                     
+//             DISP=(NEW,CATLG,DELETE),                               
+//             UNIT=TSO,                                              
+//             SPACE=(TRK,(15,5),RLSE),                               
+//             DCB=(LRECL=80,RECFM=FB,BLKSIZE=23440)                  
+//*                                                                   
 //SYSPRINT   DD SYSOUT=*                                              
 //SYSOUT     DD SYSOUT=*                                              
 //SYSDUMP    DD SYSOUT=*                                              
-//DD1        DD DSN=MJ.INPUT.DATASET,                                 
-//           DISP=(NEW,CATLG,DELETE),                                 
-//           SPACE=(TRK,(1,1),RLSE),                                  
-//           UNIT=SYSDA,                                              
-//           VOL=SER=TSO003,                                          
-//           DCB=(DSORG=PS,RECFM=FB,LRECL=20,BLKSIZE=200)             
-//                                                                    
+//                                                         
