@@ -16,7 +16,8 @@
 //STEP01  EXEC PGM=IDCAMS                                             
 //SYSPRINT DD  SYSOUT=*                                               
 //SYSIN    DD  *                                                      
- DELETE MJ.INPUT.FILE                                                 
+ DELETE MJ.INPUT.FILE 
+/*
 //*                                                                   
 //STEP02   EXEC PGM=IEFBR14                                           
 //OUTPTF   DD  DSN=MJ.INPUT.FILE,                                     
