@@ -1,0 +1,75 @@
+      **************************************************************    
+      *                                                                 
+      *  PROGRAM ID MJ1AUWN                                             
+      *  DATE CREATED:  2024-10-30                                      
+      *  
+      *  CHANGE LOG                                                     
+      *  USER ID     DATE     CHANGE DESCRIPTION                        
+      * ---------   ------    -------------------------------------     
+      *                                                                 
+250707*  MFMOJO     25-07-07  ADDED LABELS AND BLOCK INFO TO FD         
+      **************************************************************    
+       IDENTIFICATION DIVISION.                                         
+       PROGRAM-ID.  'MJ1AUWN'.                                          
+                                                                        
+       ENVIRONMENT DIVISION.                                            
+       CONFIGURATION SECTION.                                           
+       SOURCE-COMPUTER.  IBM-360.                                       
+       OBJECT-COMPUTER.  IBM-360.                                       
+       SPECIAL-NAMES.                                                   
+           CONSOLE IS CNSL.                                             
+                                                                        
+       INPUT-OUTPUT SECTION.
+                                                                        
+       FILE-CONTROL.                                                    
+NOTE       SELECT FILE-PEOPLE ASSIGN TO UT-S-INPUTF.                    
+                                                                        
+       DATA DIVISION.                                                   
+       FILE SECTION.                                                    
+250707 FD     FILE-PEOPLE                                               
+250707        LABEL RECORDS ARE OMITTED                                 
+250707        BLOCK CONTAINS 0 RECORDS                                  
+250707        DATA RECORD IS FIL-PEOPLE.                                
+           01 FIL-PEOPLE.                                               
+              02 FIL-PERS-NM     PIC X(20).                             
+              02 FIL-BRTH-DT     PIC X(10).                             
+              02 FILLER          PIC X(50).                             
+                                                                        
+       WORKING-STORAGE SECTION.                                         
+                                                                        
+           01 WS-PERSON.                                                
+              02 WS-PERSON-NM    PIC X(20).                             
+              02 WS-BRTH-DT.                                            
+                 03 WS-BRTH-DT-YR   PIC 9(4).                           
+                 03 FILLER          PIC X.                              
+                 03 WS-BRTH-DT-MM   PIC 9(2).                           
+                 03 FILLER          PIC X.                              
+                 03 WS-BRTH-DT-DD   PIC 9(2).                           
+              02 WS-FILLER          PIC X(50).                          
+                                                                        
+           01 WS-VAL.                                                   
+              02  WS-EOF            PIC X.                              
+                                                                        
+       PROCEDURE DIVISION.                                              
+                                                                        
+           MOVE 'N' TO WS-EOF.                                          
+                                                                        
+           OPEN INPUT  FILE-PEOPLE.                                     
+                                                                        
+           PERFORM R1000-READ                                           
+                   UNTIL WS-EOF = 'Y'                                   
+           .     
+                                                                        
+           CLOSE FILE-PEOPLE.                                           
+           STOP RUN.                                                    
+                                                                        
+NOTE  ****************************************************              
+NOTE  * OLDER COBOL SYNTAX THERE IS NO NOT AT END                       
+NOTE  ****************************************************              
+       R1000-READ.                                                      
+           READ FILE-PEOPLE INTO WS-PERSON                              
+                AT END  MOVE 'Y' TO WS-EOF.                             
+                                                                        
+           IF WS-EOF NOT = 'Y'                                          
+              DISPLAY WS-PERSON.                                        
+           .                                                            
