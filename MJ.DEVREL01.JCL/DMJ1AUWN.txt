@@ -1,0 +1,14 @@
+//DMJ1AUWN JOB (JOB),'COBOL PROGRAM',                                   
+//         CLASS=A,MSGCLASS=X,                                          
+//         MSGLEVEL=(1,1),                                              
+//         NOTIFY=&SYSUID                                               
+//*                                                                     
+//STEP01   EXEC PGM=MJ1AUWN                                             
+//INPUTF   DD  DSN=MJ.INPUT.FILE,                                       
+//             DISP=SHR                                                 
+//STEPLIB  DD   DSN=MJ.DEVREL01.LOADLIB,DISP=SHR                        
+//*                                                                     
+//SYSPRINT DD   SYSOUT=*                                                
+//SYSOUT   DD   SYSOUT=*                                                
+//SYSIN    DD   DUMMY                                                   
+//*                                                                     
